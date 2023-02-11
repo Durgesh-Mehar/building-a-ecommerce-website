@@ -1,46 +1,31 @@
+import React,{useState} from "react";
+import NavBar, {CartButton} from "./components/Cart/NavBar";
 import AvailableItem from "./components/Body/AvailableItem";
+import Cart from "./components/Cart/Cart";
+import { productsArr} from "./components/Cart/CartItem";
+import Header from "./components/LayOut/Header";
 
-const productsArr = [
-  {
-    title: "Colors",
 
-    price: 100,
 
-    imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%201.png",
-  },
+const App = (props) => {
+  const [showcart, setshowcart] = useState(false);
 
-  {
-    title: "Black and white Colors",
+  const showcartHandler = () => {
+    setshowcart(true);
+  };
+  const deleteHandler = () => {
+    setshowcart(false);
+  };
 
-    price: 50,
-
-    imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%202.png",
-  },
-
-  {
-    title: "Yellow and Black Colors",
-
-    price: 70,
-
-    imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%203.png",
-  },
-
-  {
-    title: "Blue Color",
-
-    price: 100,
-
-    imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%204.png",
-  },
-];
-
-function App() {
   return (
     <div>
-      <h2>Let's get started!</h2>
+       <NavBar />
+      <Header />
+      
+      <CartButton onClick = {showcartHandler}/>
       <AvailableItem products={productsArr} />
+      {showcart && <Cart onClick={deleteHandler} />}
     </div>
   );
 }
-
 export default App;

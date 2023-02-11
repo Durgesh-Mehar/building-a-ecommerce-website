@@ -1,0 +1,11 @@
+import classes from './Header.module.css';
+
+const Header =() =>{
+    return (
+        <div className={classes.header}>
+          <h2>Header</h2>
+        </div>
+      );
+}
+
+export default Header;

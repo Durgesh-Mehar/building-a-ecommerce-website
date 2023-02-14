@@ -63,3 +63,18 @@
 .navBar{
   background-color:black;
 }
+
+
+.text{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+    width: 80%;
+    margin-left: 5%;
+    margin-top: 10%;
+    text-align: center;
+}
+
+.a {
+  text-align: center;
+}

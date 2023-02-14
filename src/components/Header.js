@@ -1,29 +1,20 @@
 import Button from "react-bootstrap/Button";
 import "../App.css";
 import Nav from "react-bootstrap/Nav";
+import { Link } from "react-router-dom";
 
-export const NavBar = (props) => {
-  return (
-    <div className="navBar">
-      <Nav className="justify-content-center" activeKey="/home">
-        <Nav.Item>
-          <Nav.Link href="#home">HOME</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link href="#store" onClick={() => props.handleShow(false)}>
-            STORE
-          </Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link href="#about">ABOUT</Nav.Link>
-        </Nav.Item>
-      </Nav>
-    </div>
-  );
-};
 
 const Header = (props) => {
   return (
+    <>
+    <div className="navBar">
+      <Nav className="justify-content-center" activeKey="/home">
+      <Link to="/home">HOME</Link>
+      <span></span>
+      <Link to="/store">STORE</Link>
+      <Link to="/about" onClick={() => props.handleShow(false)}>ABOUT</Link>
+      </Nav>
+       </div>
     <div className="flex shopping-cart ">
       <h4>Shopping Cart</h4>
       <Button variant="success" onClick={() => props.handleShow(true)}>
@@ -31,7 +22,12 @@ const Header = (props) => {
         <sup>{props.count}</sup>
       </Button>
     </div>
+    </>
   );
 };
+
+
+
+ra
 
 export default Header;

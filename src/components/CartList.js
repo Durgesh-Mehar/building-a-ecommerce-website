@@ -5,7 +5,7 @@ import "../App.css";
 const CartList = () => {
   const [CART, setCART] = useState([]);
 
-  const { cart} = useContext(Cart);
+  const {cart} = useContext(Cart);
 
   useEffect(() => {
     setCART(cart);

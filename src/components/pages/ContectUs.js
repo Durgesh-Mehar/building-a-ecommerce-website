@@ -22,10 +22,7 @@ function ContactUs() {
       headers:{
         'Content-Type':'application/json'
       }
-
-     
-
-    })
+})
 
     nameRef.current.value=''
     emailRef.current.value=''

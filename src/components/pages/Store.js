@@ -15,7 +15,8 @@ const Store = () => {
         return <div style={{width:'50%' }}>
           <div className="product-item">   
           <h3>{item.title}</h3>
-          <img src={item.imageUrl} width="50%"/>
+          {/* <img src={item.imageUrl} width="50%"/> */}
+          <div className="hover-image"><img src={item.imageUrl} width="40%"  /></div>
           <p>Price: ${item.price}</p>
           <Button className="button"
           onClick={() => addToCart(item)}

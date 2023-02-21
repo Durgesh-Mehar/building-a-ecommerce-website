@@ -16,6 +16,7 @@ const Header = (props) => {
       <div style={{margin:'20px'}}><Link to="/store">STORE</Link></div>
       <div style={{margin:'20px'}}><Link to="/about" onClick={() => props.handleShow(false)}>ABOUT</Link></div>
       <div style={{margin:'20px'}}><Link to="/contact">Contact US</Link></div>
+      <div style={{margin:'20px'}}><Link to="/login">Log in</Link></div>
       </Nav>
        </div>
     <div className="flex shopping-cart ">

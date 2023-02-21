@@ -8,6 +8,7 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import ContactUs from "./components/pages/ContectUs";
 import ProductDetails from "./components/pages/ProductDetails";
+import LogIn from "./components/pages/Login";
 
 
 
@@ -31,9 +32,9 @@ const App = () => {
         <Route path="store" element={showCart ? <CartList /> : <Store />} />
         <Route path="about" element={<About />} />
         <Route path="contact" element={<ContactUs/>}/>
+        <Route path="login" element={<LogIn/>}/>
         <Route path="/product/:id" element={<ProductDetails/>} /> 
 
-      
       </Routes>
       
     </>

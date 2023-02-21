@@ -29,7 +29,7 @@ const Store = () => {
           onClick={() => addToCart(item)}
           >Add to Cart</Button>
           </div>
-         </div>;
+         </div>
       })
       
       }

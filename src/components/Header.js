@@ -33,7 +33,7 @@ const Header = (props) => {
       
       { !isLoggedIn && <div style={{margin:'20px'}}><Link to="/login">Log in</Link></div>}
 
-      {isLoggedIn && <div style={{margin:'20px'}}><Link to="/login" onClick={logoutHandler}>Logout</Link></div>}
+      {isLoggedIn && <div style={{margin:'20px'}}><Link to="/login" onClick={logoutHandler}>LogOut</Link></div>}
       </Nav>
        </div>
     <div className="flex shopping-cart ">

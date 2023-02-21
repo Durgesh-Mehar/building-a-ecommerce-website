@@ -16,6 +16,7 @@ function LogIn() {
         e.preventDefault()
         const enteredEmail = emailInputref.current.value
         const enteredpassword = passwordInputref.current.value
+        localStorage.setItem('userEmail', enteredEmail)
         //console.log(enteredEmail,enteredpassword)
 
         fetch('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBWnPWvAOvBETqTLWvqNMnJdmcj8MmPRX4',{

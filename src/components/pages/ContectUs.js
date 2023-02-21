@@ -1,7 +1,9 @@
 import { useRef } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-function ContactUs() {
+
+
+const ContactUs = ()  => {
   const nameRef=useRef('')
   const emailRef=useRef('')
   const numberRef=useRef('')
@@ -61,4 +63,4 @@ function ContactUs() {
   )
 }
 
-export default ContactUs
+export default ContactUs;

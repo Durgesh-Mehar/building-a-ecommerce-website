@@ -13,13 +13,16 @@ const Store = () => {
       {
       
       productsArr.map((item, index) => {
-        return <div style={{width:'50%' }}>
+        return <div style={{width:'50%', paddingBottom: '5%' }}>
           <div className="product-item">   
           <h3>{item.title}</h3>
-          {/* <img src={item.imageUrl} width="50%"/> */}
+          
           <Link to={`/product/${item.id}`}>
+            <div className="hover-image">
           <img src={item. imageUrl} alt={item.title} width="40%"  />
+          </div>
           </Link>
+
           <p>Price: ${item.price}</p>
           
           <Button className="button"

@@ -9,6 +9,7 @@ import { Routes, Route } from "react-router-dom";
 import ContactUs from "./components/pages/ContectUs";
 import ProductDetails from "./components/pages/ProductDetails";
 import LogIn from "./components/pages/Login";
+import Footer from "./components/Footer/Footer";
 
 
 
@@ -36,7 +37,7 @@ const App = () => {
         <Route path="/product/:id" element={<ProductDetails/>} /> 
 
       </Routes>
-      
+      <Footer />
     </>
   );
 };

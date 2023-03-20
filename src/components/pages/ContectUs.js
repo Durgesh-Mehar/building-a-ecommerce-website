@@ -9,7 +9,7 @@ const ContactUs = ()  => {
   const numberRef=useRef('')
   
   const submitHandler =(e)=>{
-    e.preventDefault()
+    e.preventDefault();
     const data = {
       name:nameRef.current.value,
       email:emailRef.current.value,
@@ -26,9 +26,9 @@ const ContactUs = ()  => {
       }
 })
 
-    nameRef.current.value=''
-    emailRef.current.value=''
-    numberRef.current.value = ''
+    nameRef.current.value='';
+    emailRef.current.value='';
+    numberRef.current.value = '';
 
   }
 
@@ -37,7 +37,7 @@ const ContactUs = ()  => {
        <Form onSubmit={submitHandler}>
        <Form.Group className="mb-3" controlId="formBasicPassword">
         <Form.Label>Name</Form.Label>
-        <Form.Control type="text" placeholder="enter name" ref={nameRef} />
+        <Form.Control type="text" placeholder="enter name" ref={nameRef}  />
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>

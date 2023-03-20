@@ -31,17 +31,17 @@ const Header = (props) => {
       <div style={{margin:'20px'}}><Link to="/about" onClick={() => props.handleShow(false)}>ABOUT</Link></div>
       <div style={{margin:'20px'}}><Link to="/contact">Contact US</Link></div>
       
-      { !isLoggedIn && <div style={{margin:'20px'}}><Link to="/login">Log in</Link></div>}
+      { !isLoggedIn && <div style={{margin:'20px'}}><Link to="/signup">Sign Up</Link></div>}
 
       {isLoggedIn && <div style={{margin:'20px'}}><Link to="/login" onClick={logoutHandler}>LogOut</Link></div>}
       </Nav>
        </div>
     <div className="flex shopping-cart ">
       <h4 style={{fontFamily:'Comic Sans MS'}}>Shopping Cart</h4>
-      <Button variant="success" onClick={() => props.handleShow(true)}>
+    <Link to='cart'><Button variant="success" onClick={() => props.handleShow(true)}>
         Cart
         <sup>{cart.length}</sup>
-      </Button>
+      </Button></Link>
     </div>
     <div className="generic-section"><h1>The Generics</h1></div>
     </>

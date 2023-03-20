@@ -24,7 +24,7 @@ const Home = () => {
           <td>JUL16</td>
           <td>DETROIT, MI</td>
           <td>DTE ENERGY MUSIC THEATRE</td>
-          <td><Button variant="info">BUY TICKETSs</Button></td>
+          <td><Button variant="info">BUY TICKETS</Button></td>
         </tr>
         <tr>
           <td>2</td>

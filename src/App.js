@@ -14,6 +14,7 @@ import ContactUs from "./components/pages/ContectUs";
 
  import AuthContext from "./components/store/AuthContext";
  import Footer from "./components/Footer/Footer";
+import SignUp from "./components/pages/SignUp";
 
 //const Home = lazy(()=>import("./components/pages/Home"))
 const Store = lazy(()=>import("./components/pages/Store"))
@@ -37,14 +38,16 @@ const App = () => {
 
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="store" element={<Suspense>{showCart ? <CartList /> : <Store />}</Suspense>} />
+          <Route path="store" element={<Suspense><Store /></Suspense>} />
           <Route path="about" element={<Suspense><About /></Suspense>} />
           <Route path="contact" element={<ContactUs />} />
           {<Route path="/product/:id" element={<Suspense><ProductDetail /></Suspense>} />}
-          <Route path="/login" element={<Login />} />
-          
+          <Route path="/login" element={<Login/>} />
+          <Route path="/signup" element={<SignUp/>}/>
+          <Route path="/cart" element = {showCart&&<CartList/>}></Route>
+
         </Routes>
-        <Footer/>
+        <div style={{textAlign:'buttom'}}><Footer/></div>
      
     </div>
   );

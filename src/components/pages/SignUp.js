@@ -1,11 +1,11 @@
 import React, { useContext, useRef } from 'react'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import AuthContext from '../store/AuthContext';
 
 
-function LogIn() {
+function SignUp() {
     const authCtx = useContext(AuthContext)
     const history = useNavigate(); 
     const emailInputref = useRef();
@@ -16,11 +16,9 @@ function LogIn() {
         const enteredEmail = emailInputref.current.value
         const enteredpassword = passwordInputref.current.value
         localStorage.setItem('userEmail', enteredEmail)
-        const replcedmail = enteredEmail.replace('@','').replace('.','')
-
         //console.log(enteredEmail,enteredpassword)
 
-        fetch('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyA8_s81px03_ZgvH0948868T6K6XoBBXMw',{
+        fetch('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyA8_s81px03_ZgvH0948868T6K6XoBBXMw',{
             method:'POST',
             body:JSON.stringify({
                 email:enteredEmail,
@@ -47,11 +45,10 @@ function LogIn() {
             authCtx.Login(data.idToken)
             localStorage.setItem('token',data.idToken)
             console.log(data.idToken)
-            localStorage.setItem('xyz',replcedmail)
-
+            alert("Successfuly Signed Up")
             
             localStorage.setItem('token',data.idToken)
-            history('/store')
+            history('/login')
         }).catch((err)=>{
             alert(err.message)
         })
@@ -59,7 +56,7 @@ function LogIn() {
     }
   return (
     <div style={{margin:'5%'}}>
-    <h1 style={{textAlign:'center',fontFamily:'MV Boli'}}>Log In</h1>
+    <h1 style={{textAlign:'center',fontFamily:'MV Boli'}}>Sign Up</h1>
       <Form onSubmit={submitHandler}>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
@@ -76,12 +73,13 @@ function LogIn() {
       <Form.Group className="mb-3" controlId="formBasicCheckbox">
         <Form.Check type="checkbox" label="Check me out" />
       </Form.Group>
-      <Button variant="success" type="submit">
-        Log In
+     <Button variant="success" type="submit">
+        Sign Up
       </Button>
+      <Link to="/login" style={{margin:'20px'}}>Log In</Link>
     </Form>
     </div>
   )
 }
 
-export default LogIn;
+export default SignUp;

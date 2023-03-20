@@ -19,14 +19,14 @@ const Store = () => {
           
           <Link to={`/product/${item.id}`}>
             <div className="hover-image">
-          <img src={item. imageUrl} alt={item.title} width="40%"  />
+          <img src={item.imageUrl} alt={item.title} width="40%"  />
           </div>
           </Link>
 
           <p>Price: ${item.price}</p>
           
           <Button className="button"
-          onClick={() => addToCart(item)}
+          onClick={() => addToCart(item.id)}
           >Add to Cart</Button>
           </div>
          </div>
